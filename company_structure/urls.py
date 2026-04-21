@@ -3,7 +3,7 @@ from company_structure.views import *
 
 urlpatterns = [
     path("", home, name="home"),
-    path("company_structure/", area_list, name="area_list"),
-    path("company_structure/<int:nro_departamento>/", area_detail, name="area_detail"),
-    path("company_structure/create/", area_new, name="area_create"),
+    path("company_structure/", departamentos_list, name="departamentos_list"),
+    path("company_structure/<int:nro_departamento>/", ver_departamento, name="departamento_detail"),
+    path("company_structure/crear/", crear_departamento, name="departamento_create"),
 ]

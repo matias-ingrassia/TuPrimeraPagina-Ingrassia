@@ -1,6 +1,6 @@
-{% extends 'areas/index.html' %}
+{% extends 'company_structure/index.html' %}
 
-{% block titulo %} <title>Area Detail</title> {% endblock %}
+{% block titulo %} <title>Detalle del Departamento</title> {% endblock %}
 
 {% block cartas %} {% endblock %}
 
@@ -9,16 +9,16 @@
 
         <div class="card card-custom p-4 w-50">
 
-            <h3 class="text-center mb-4">Area Detail</h3>
+            <h3 class="text-center mb-4">Detalle del Departamento</h3>
 
             <ul class="list-group list-group-flush">
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Area Id:</strong> {{ departamento_q.nro_departamento }}
+                    <strong>Nro Departamento:</strong> {{ departamento_q.nro_departamento }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Name:</strong> {{ departamento_q.nombre }}
+                    <strong>Nombre:</strong> {{ departamento_q.nombre }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
@@ -26,11 +26,11 @@
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Employees:</strong> {{ departamento_q.nro_empleados }}
+                    <strong>Nro Empleados:</strong> {{ departamento_q.nro_empleados }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Creation Date:</strong> {{ departamento_q.fecha_de_creacion }}
+                    <strong>Fecha de creación:</strong> {{ departamento_q.fecha_de_creacion }}
                 </li>
 
             </ul>
@@ -38,11 +38,11 @@
             <!-- BOTONES -->
             <div class="d-flex justify-content-between mt-4">
                 <a href="{% url 'departamentos_list' %}" class="btn btn-secondary">
-                    Back
+                    Volver
                 </a>
 
                 <a href="{% url 'home' %}" class="btn btn-custom">
-                    Home
+                    Inicio
                 </a>
             </div>
 
