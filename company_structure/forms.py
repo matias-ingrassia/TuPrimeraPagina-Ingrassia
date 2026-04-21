@@ -1,20 +1,62 @@
 from django import forms
-from company_structure.models import AreaModel
+from company_structure.models import AreaModel, DepartmentModel, TeamModel, EmployeeModel, RoleModel
 
 class AreaForm(forms.ModelForm):
     class Meta:
         model = AreaModel
-        fields = ("name", "area_id", "email", "employees")
+        fields = ("area_id", "name", "employees")
         widgets = {
-            "name": forms.TextInput(attrs={'class': 'form-control'}),
             "area_id": forms.NumberInput(attrs={'class': 'form-control'}),
-            "email": forms.EmailInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "lead": forms.TextInput(attrs={'class': 'form-control'}),
             "employees": forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
+class DepartmentForm(forms.ModelForm):
+    class Meta:
+        model = DepartmentModel
+        fields = ("department_id", "name", "lead", "area", "employees")
+        widgets = {
+            "department_id": forms.NumberInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "lead": forms.TextInput(attrs={'class': 'form-control'}),
+            "area": forms.TextInput(attrs={'class': 'form-control'}),
+            "employees": forms.NumberInput(attrs={'class': 'form-control'}),
+        }
 
+class TeamForm(forms.ModelForm):
+    class Meta:
+        model = TeamModel
+        fields = ("team_id", "name", "lead", "department", "employees")
+        widgets = {
+            "team_id": forms.NumberInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "lead": forms.TextInput(attrs={'class': 'form-control'}),
+            "department": forms.TextInput(attrs={'class': 'form-control'}),
+            "employees": forms.NumberInput(attrs={'class': 'form-control'}),
+        }
 
+class EmployeeForm(forms.ModelForm):
+    class Meta:
+        model = EmployeeModel
+        fields = ("employee_id", "name", "surname", "role", "email", "phone_number", "mobile_number", "team")
+        widgets = {
+            "employee_id": forms.NumberInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "surname": forms.TextInput(attrs={'class': 'form-control'}),
+            "role": forms.TextInput(attrs={'class': 'form-control'}),
+            "email": forms.EmailInput(attrs={'class': 'form-control'}),
+            "phone_number": forms.TextInput(attrs={'class': 'form-control'}),
+            "mobile_number": forms.TextInput(attrs={'class': 'form-control'}),
+            "team": forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-
-class DepartamentoMedicoForm2(forms.Form):
-    pass
+class RoleForm(forms.ModelForm):
+    class Meta:
+        model = RoleModel
+        fields = ("role_id", "name", "description")
+        widgets = {
+            "role_id": forms.NumberInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "description": forms.Textarea(attrs={'class': 'form-control'}),
+        }

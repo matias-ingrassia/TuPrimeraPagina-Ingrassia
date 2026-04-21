@@ -1,48 +1,48 @@
 {% extends 'company_structure/index.html' %}
 
-{% block titulo %} <title>Detalle del Departamento</title> {% endblock %}
+{% block title %} <title>Area Details</title> {% endblock %}
 
-{% block cartas %} {% endblock %}
+{% block cards %} {% endblock %}
 
-{% block contenido %}
+{% block content %}
     <div class="container mt-5 d-flex justify-content-center">
 
         <div class="card card-custom p-4 w-50">
 
-            <h3 class="text-center mb-4">Detalle del Departamento</h3>
+            <h3 class="text-center mb-4">Area Details</h3>
 
             <ul class="list-group list-group-flush">
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Nro Departamento:</strong> {{ departamento_q.nro_departamento }}
+                    <strong>Area ID:</strong> {{ area_q.area_id }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Nombre:</strong> {{ departamento_q.nombre }}
+                    <strong>Name:</strong> {{ area_q.name }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Email:</strong> {{ departamento_q.email_dpto }}
+                    <strong>Lead:</strong> {{ area_q.lead }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Nro Empleados:</strong> {{ departamento_q.nro_empleados }}
+                    <strong>Employee Count:</strong> {{ area_q.employees }}
                 </li>
 
                 <li class="list-group-item bg-transparent text-white">
-                    <strong>Fecha de creación:</strong> {{ departamento_q.fecha_de_creacion }}
+                    <strong>Creation Date:</strong> {{ area_q.creation_date }}
                 </li>
 
             </ul>
 
-            <!-- BOTONES -->
+            <!-- BUTTONS -->
             <div class="d-flex justify-content-between mt-4">
                 <a href="{% url 'area_list' %}" class="btn btn-secondary">
-                    Volver
+                    Back
                 </a>
 
                 <a href="{% url 'home' %}" class="btn btn-custom">
-                    Inicio
+                    Home
                 </a>
             </div>
 

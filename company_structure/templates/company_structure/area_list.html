@@ -57,7 +57,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Email Address</th>
+                        <th>Lead</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -66,10 +66,10 @@
                         <tr>
                             <td>{{ area.area_id }}</td>
                             <td>{{ area.name }}</td>
-                            <td>{{ area.email }}</td>
+                            <td>{{ area.lead }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{% url 'area_detail' area.area_id %}" class="btn btn-sm btn-info text-white"> Ver</a>
+                                    <a href="{% url 'area_detail' area.area_id %}" class="btn btn-sm btn-info text-white"> View</a>
                                 </div>
                             </td>
                         </tr>

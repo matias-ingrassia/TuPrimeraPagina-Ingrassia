@@ -1,44 +1,44 @@
 {% extends "company_structure/index.html" %}
 
-{% block titulo %} <title>Crear Departamento</title> {% endblock %}
+{% block title %} <title>New Area</title> {% endblock %}
 
-{% block cartas %} {% endblock %}
+{% block cards %} {% endblock %}
 
-{% block contenido %}
+{% block content %}
 
     <div class="container mt-5 d-flex justify-content-center">
         <div class="card card-custom p-4 w-50">
-            <h3 class="text-center mb-4">Crear Departamento Médico</h3>
+            <h3 class="text-center mb-4">New Area</h3>
             <form method="POST">
                 {% csrf_token %}
 
                 <div class="mb-3">
-                    <label class="form-label">Nombre</label>
-                    {{ form.nombre }}
+                    <label class="form-label">Name</label>
+                    {{ form.name }}
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nro Departamento</label>
-                    {{ form.nro_departamento }}
+                    <label class="form-label">Area ID</label>
+                    {{ form.area_id }}
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    {{ form.email_dpto }}
+                    <label class="form-label">Lead</label>
+                    {{ form.lead }}
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nro Empleados</label>
-                    {{ form.nro_empleados }}
+                    <label class="form-label">Employee Count</label>
+                    {{ form.employees }}
                 </div>
 
                 <div class="d-flex justify-content-between mt-4">
                     <a href="{% url 'area_list' %}" class="btn btn-secondary">
-                        Volver
+                        Back
                     </a>
 
                     <button type="submit" class="btn btn-custom">
-                        Crear
+                        Add
                     </button>
                 </div>
             </form>
