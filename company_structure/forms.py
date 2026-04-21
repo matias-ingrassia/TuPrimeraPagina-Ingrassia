@@ -1,16 +1,15 @@
 from django import forms
-from company_structure.models import DepartamentosMedicos
+from company_structure.models import AreaModel
 
-
-class DepartamentoMedicoForm(forms.ModelForm):
+class AreaForm(forms.ModelForm):
     class Meta:
-        model = DepartamentosMedicos
-        fields = ("nombre", "nro_departamento", "email_dpto", "nro_empleados")
+        model = AreaModel
+        fields = ("name", "area_id", "email", "employees")
         widgets = {
-            "nombre": forms.TextInput(attrs={'class': 'form-control'}),
-            "nro_departamento": forms.NumberInput(attrs={'class': 'form-control'}),
-            "email_dpto": forms.EmailInput(attrs={'class': 'form-control'}),
-            "nro_empleados": forms.NumberInput(attrs={'class': 'form-control'}),
+            "name": forms.TextInput(attrs={'class': 'form-control'}),
+            "area_id": forms.NumberInput(attrs={'class': 'form-control'}),
+            "email": forms.EmailInput(attrs={'class': 'form-control'}),
+            "employees": forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
 

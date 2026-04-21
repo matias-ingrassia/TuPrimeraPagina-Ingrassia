@@ -37,7 +37,7 @@
 {% endblock %}
 
 {% block cards %} {% endblock %}
-{% block contenido %}
+{% block content %}
     <div class="container mt-5">
 
         <div class="card p-4">
@@ -45,9 +45,9 @@
                 <h2 class="fw-bold mb-0">Areas</h2>
             <div class="d-flex gap-2">
                 <form class="d-flex" role="search">
-                    <input type="text" name="nombre" class="form-control" placeholder="Search..." value="{{ request.GET.nombre }}">
+                    <input type="text" name="name" class="form-control" placeholder="Search..." value="{{ request.GET.name }}">
                 </form>
-            <a href="{% url 'departamento_create' %}" class="btn btn-primary"> Add Area</a>
+            <a href="{% url 'area_create' %}" class="btn btn-primary"> Add Area</a>
             </div>
         </div>
 
@@ -62,14 +62,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for departamento in departamentos_list %}
+                    {% for area in area_list %}
                         <tr>
-                            <td>{{ departamento.nro_departamento }}</td>
-                            <td>{{ departamento.nombre }}</td>
-                            <td>{{ departamento.email_dpto }}</td>
+                            <td>{{ area.area_id }}</td>
+                            <td>{{ area.name }}</td>
+                            <td>{{ area.email }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{% url 'departamento_detail' departamento.nro_departamento %}" class="btn btn-sm btn-info text-white"> Ver</a>
+                                    <a href="{% url 'area_detail' area.area_id %}" class="btn btn-sm btn-info text-white"> Ver</a>
                                 </div>
                             </td>
                         </tr>
