@@ -1,0 +1,23 @@
+{% extends "company_structure/index.html" %}
+{% block title %} <title>New Team</title> {% endblock %}
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card card-custom p-4 w-50">
+            <h3 class="text-center mb-4">New Team</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3"><label class="form-label">Team ID         </label>{{ form.role_id }}      </div>
+                <div class="mb-3"><label class="form-label">Name            </label>{{ form.name }}         </div>
+                <div class="mb-3"><label class="form-label">Lead            </label>{{ form.lead }}         </div>
+                <div class="mb-3"><label class="form-label">Department      </label>{{ form.department }}   </div>
+                
+                <!-- BUTTONS -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{% url 'team_list' %}" class="btn btn-primary">Back</a>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'company_structure/index.html' %}
+{% block title %} <title>Department Details</title> {% endblock %}
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card card-custom p-4 w-50">
+            <h3 class="text-center mb-4">Department Details</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Department ID:    </strong>{{ department_q.department_id }}   </li>
+                <li class="list-group-item"><strong>Creation Date:    </strong>{{ department_q.creation_date }}   </li>
+                <li class="list-group-item"><strong>Name:             </strong>{{ department_q.name }}            </li>
+                <li class="list-group-item"><strong>Lead:             </strong>{{ department_q.lead }}            </li>
+                <li class="list-group-item"><strong>Area:             </strong>{{ department_q.area }}            </li>
+            </ul>
+
+            <!-- BUTTONS -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'department_list' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

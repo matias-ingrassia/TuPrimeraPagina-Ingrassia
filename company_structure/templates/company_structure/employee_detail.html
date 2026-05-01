@@ -1,0 +1,26 @@
+{% extends 'company_structure/index.html' %}
+{% block title %} <title>Employee Details</title> {% endblock %}
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card card-custom p-4 w-50">
+            <h3 class="text-center mb-4">Employee Details</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Employee ID:    </strong>{{ employee_q.employee_id }}   </li>
+                <li class="list-group-item"><strong>Creation Date:  </strong>{{ employee_q.creation_date }} </li>
+                <li class="list-group-item"><strong>Name:           </strong>{{ employee_q.name }}          </li>
+                <li class="list-group-item"><strong>Role:           </strong>{{ employee_q.role }}          </li>
+                <li class="list-group-item"><strong>Email:          </strong>{{ employee_q.email }}         </li>
+                <li class="list-group-item"><strong>Phone:          </strong>{{ employee_q.phone_number }}  </li>
+                <li class="list-group-item"><strong>Mobile:         </strong>{{ employee_q.mobile_number }} </li>
+                <li class="list-group-item"><strong>Team:           </strong>{{ employee_q.team }}          </li>
+            </ul>
+
+            <!-- BUTTONS -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'employee_list' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

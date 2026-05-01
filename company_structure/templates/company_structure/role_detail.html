@@ -1,0 +1,22 @@
+{% extends 'company_structure/index.html' %}
+{% block title %} <title>Role Details</title> {% endblock %}
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card card-custom p-4 w-50">
+            <h3 class="text-center mb-4">Role Details</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Role ID:        </strong>{{ role_q.role_id }}           </li>
+                <li class="list-group-item"><strong>Name:           </strong>{{ role_q.name }}              </li>
+                <li class="list-group-item"><strong>Description:    </strong>{{ role_q.name }}              </li>
+                <li class="list-group-item"><strong>Creation Date:  </strong>{{ role_q.creation_date }}     </li>
+            </ul>
+
+            <!-- BUTTONS -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'role_list' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -12,40 +12,98 @@
         <style>
             body {
                 background-color: #ffffff;
-                color: #595959;
+                color: #333;
+            } 
+
+            nav {
+                box-shadow: 0 2px 20px 0 rgba(0,0,0,.2);
             }
 
-            .navbar-custom {
-                background-color: #98989f;
+            .navbar-brand {
+                padding-left: 50px;
+                color: #000000 !important;
+                font-family: 'Segoe UI', sans-serif;
+                font-weight: 500;
+                font-size: 28px;
             }
 
             .nav-link {
-                color: white !important;
+                color: #595959 !important;
+                font-weight: 500;
+                font-size: 16px;
             }
 
             .nav-link:hover {
                 color: #000000 !important;
+                border-bottom: 3px solid #ff0037;
+                transition: all 0s ease;
             }
 
             .hero {
                 padding: 80px 0;
                 text-align: center;
+                color: #000000;
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            .lead {
+                padding-top: 10px;
+                color: #595959;
+                font-weight: 400;
+                font-size: 24px;
+            }
+            
+            .card{
+                background-color: #F7F5F5;
+                border: none;
+                border-radius: 10px;
+                color: #000000;
+                font-weight: 500;
+            }
+
+            .card-custom h4 {
+                background-color: transparent;
+                border: none;
+                color: #000000;
+                font-weight: 700;
+                font-size: 24px;
             }
 
             .card-custom {
-                background-color: #595959;
+                background-color: #F7F5F5;
                 border: none;
-                color: white;
+                color: #595959;
+                font: #000000;
+                font-weight: 500;
             }
-
-            .btn-custom {
+            
+            .btn-primary {
                 background-color: #ff0037;
                 border: none;
+                font-weight: 500;
             }
 
-            .btn-custom:hover {
-                background-color: #ff033d;
+            .btn-primary:hover {
+                background-color: #a71a1acc;
+                border: none;
+                font-weight: 500;
             }
+
+            .list-group-item{
+                color: #000000;
+                background-transparent;
+            }
+
+            thead {
+                background-color: #f7f5f5 !important;
+            }
+
+            .table thead th {
+                background-color: #f7f5f5 !important;
+                color: #000000 !important;
+            }
+
         </style>
     {% endblock %}
 </head>
@@ -55,7 +113,7 @@
         <div class="container-fluid">
             
             <!-- Izquierda -->
-            <a class="navbar-brand text-white fw-bold" href="{% url 'home' %}">
+            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
                 FabCo S. A.
             </a>
 
@@ -71,13 +129,16 @@
                         <a class="nav-link" href="{% url 'area_list' %}">Areas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Departments</a>
+                        <a class="nav-link" href="{% url 'department_list' %}">Departments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Roles</a>
+                        <a class="nav-link" href="{% url 'team_list' %}">Teams</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Employees</a>
+                        <a class="nav-link" href="{% url 'role_list' %}">Roles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee_list' %}">Employees</a>
                     </li>
                 </ul>
             </div>
@@ -100,7 +161,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card card-custom p-4">
-                        <h4>Area</h4>
+                        <h4>Areas</h4>
                         <p>Manage top-level structure</p>
                         <a href="{% url 'area_list' %}" class="btn btn-primary">View more</a>
                     </div>
@@ -110,6 +171,14 @@
                     <div class="card card-custom p-4">
                         <h4>Departments</h4>
                         <p>Manage mid-level structure</p>
+                        <a href="{% url 'department_list' %}" class="btn btn-primary">View more</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card card-custom p-4">
+                        <h4>Teams</h4>
+                        <p>Manage bottom-level structure</p>
                         <a href="" class="btn btn-primary">View more</a>
                     </div>
                 </div>
@@ -125,8 +194,8 @@
                 <div class="col-md-4 mb-4">
                     <div class="card card-custom p-4">
                         <h4>Employees</h4>
-                        <p>Manage employees, assign roles, departments and areas</p>
-                        <a href="" class="btn btn-primary">View more</a>
+                        <p>Manage your people</p>
+                        <a href="{% url 'employee_list' %}" class="btn btn-primary">View more</a>
                     </div>
                 </div>
 

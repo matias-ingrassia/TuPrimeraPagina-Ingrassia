@@ -1,0 +1,23 @@
+{% extends 'company_structure/index.html' %}
+{% block title %} <title>Team Details</title> {% endblock %}
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card card-custom p-4 w-50">
+            <h3 class="text-center mb-4">Team Details</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Team ID:            </strong>{{ team_q.team_id }}       </li>
+                <li class="list-group-item"><strong>Creation Date:      </strong>{{ team_q.creation_date }} </li>
+                <li class="list-group-item"><strong>Name:               </strong>{{ team_q.name }}          </li>
+                <li class="list-group-item"><strong>Lead:               </strong>{{ team_q.lead }}          </li>
+                <li class="list-group-item"><strong>Department:         </strong>{{ team_q.department }}    </li>
+            </ul>
+
+            <!-- BUTTONS -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'team_list' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

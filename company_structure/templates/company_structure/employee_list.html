@@ -1,0 +1,53 @@
+{% extends 'company_structure/index.html' %}
+
+{% block title %} <title>Employees</title> {% endblock %}
+
+{% block cards %} {% endblock %}
+{% block content %}
+    <div class="container mt-5">
+
+        <div class="card p-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                <h2 class="fw-bold mb-0">Employees</h2>
+            <div class="d-flex gap-2">
+                <form class="d-flex" role="search">
+                    <input type="text" name="name" class="form-control" placeholder="Search by name..." value="{{ request.GET.name }}">
+                </form>
+            <a href="{% url 'employee_new' %}" class="btn btn-primary">Add Employee</a>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-custom table-hover text-center align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Lead</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employee_list %}
+                        <tr>
+                            <td>{{ employee.employee_id }}</td>
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.role }}</td>
+                            <td>{{ employee.team }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{% url 'employee_detail' employee.employee_id %}" class="btn btn-sm btn-info text-white">View</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">There are no employees, add the first one.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
